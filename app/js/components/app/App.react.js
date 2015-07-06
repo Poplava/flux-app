@@ -1,6 +1,26 @@
 import React from 'react';
-import template from './app.tpl'
+
+import Header from '../header/Header.react';
+import TalkList from '../talkList/TalkList.react';
+
+import TalkStore from '../../stores/TalkStore';
 
 module.exports = React.createClass({
-    render: template
+    render() {
+        return(
+            <div className="c-app">
+                <Header />
+                <section className="container">
+                    I'm on the main section.
+                    <TalkList talks={this.state.talks}/>
+                </section>
+            </div>
+        );
+    },
+
+    getInitialState() {
+        return {
+            talks: TalkStore.getAll()
+        };
+    }
 });
