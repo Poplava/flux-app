@@ -8,6 +8,6 @@ module.exports = () => {
                     <strong>React</strong> <span>news app</span>
                 </div>
             </div>
-            </header>
+        </header>
     );
 };
