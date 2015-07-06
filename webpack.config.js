@@ -1,17 +1,27 @@
+var path = require('path');
+
 module.exports = {
-    entry: './client/app/app.js',
+    entry: {
+        app: './app/js/app.js'
+    },
     output: {
-        filename: 'client/build/bundle.js'
+        path: path.join(__dirname, '/app/build'),
+        filename: 'bundle.js',
+        publicPath: 'http://localhost:8080/app/build/'
     },
     module: {
         loaders: [
             {
-                test: /\.js$/,
-                loader: 'jsx-loader'
+                test: /\.js?$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel'
             }
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx']
-    }
+        root: path.resolve('./app/js'),
+        extensions: ['', '.js', '.jsx', '.json'],
+        modulesDirectories: ['node_modules']
+    },
+    devtool: 'source-map'
 };
