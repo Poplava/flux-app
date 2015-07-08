@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './header.less';
+import '../styles/header.less';
 
-module.exports = React.createClass({
+export default React.createClass({
     render() {
         return(
             <header className="c-header">
