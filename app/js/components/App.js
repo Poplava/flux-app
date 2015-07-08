@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/header.less';
 
 import Header from './Header';
+import TalkList from '../modules/talk/components/TalkList';
 import TalkTextInput from '../modules/talk/components/TalkTextInput';
 
 export default React.createClass({
@@ -12,6 +13,7 @@ export default React.createClass({
                 <Header />
                 <section className="container">
                     I'm on the main section.
+                    <TalkList />
                     <TalkTextInput />
                 </section>
             </div>
